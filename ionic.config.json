@@ -1,0 +1,8 @@
+{
+  "name": "camScanner",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

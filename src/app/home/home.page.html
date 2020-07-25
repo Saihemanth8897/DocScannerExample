@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Ionic Image Upload
+    </ion-title>
+  
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding *ngIf="image !== null">
+  <p class="textCenter" *ngIf="image.length === 0 ">
+    Please Upload Images
+  </p>
+  <ion-card  *ngFor="let image of image; let i = index" >
+  <ion-img id="myImage"  [src]="image.image"></ion-img>
+</ion-card>
+</ion-content>
+<ion-content *ngIf="image === null">
+  <p class="textCenter">Created your images to pdf Successfully</p>
+<ion-button   class="downloadbtn" (click)="printPriview()" expand="full" color="success">
+
+  Print Priview</ion-button>
+</ion-content>
+<ion-footer >
+  <ion-toolbar color="primary" *ngIf="image !== null">
+    <ion-button fill="clear"  class="downloadbtn" (click)="SavePDF()" expand="full" color="light" type="submit" value="Submit">
+
+      create</ion-button>
+    <ion-button  fill="clear" expand="full" color="light" (click)="upload(0)" >
+      <ion-icon slot="start" name="camera" ></ion-icon>
+      Import From Gallery</ion-button>
+    <ion-button fill="clear" expand="full" color="light" (click)="captureImage(1)" >
+      <ion-icon slot="start" name="camera" ></ion-icon>
+      Select Image</ion-button>
+  </ion-toolbar>
+</ion-footer>
